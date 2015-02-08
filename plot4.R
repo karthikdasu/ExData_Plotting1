@@ -5,6 +5,8 @@ dataSubset <- data[data$Date %in% c("1/2/2007", "2/2/2007"),]
 
 dataSubset$Date <- strptime(paste(dataSubset$Date,dataSubset$Time), "%d/%m/%Y %H:%M:%S")
 
+png(filename = "plot4.png")
+
 par(mfrow=c(2,2), mar=c(4,4,2,1))
 
 with(dataSubset, {
@@ -30,6 +32,5 @@ with(dataSubset, {
   lines(Date, Global_reactive_power)
 })
 
-dev.copy(png, file="plot4.png")
 dev.off()
 
