@@ -5,7 +5,8 @@ dataSubset <- data[data$Date %in% c("1/2/2007", "2/2/2007"),]
 
 dataSubset$Date <- strptime(paste(dataSubset$Date,dataSubset$Time), "%d/%m/%Y %H:%M:%S")
 
-png(filename = "plot4.png")
+
+png(filename = "plot4.png", width=480, height=480)
 
 par(mfrow=c(2,2), mar=c(4,4,2,1))
 

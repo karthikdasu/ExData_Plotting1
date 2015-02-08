@@ -5,7 +5,7 @@ dataSubset <- data[data$Date %in% c("1/2/2007", "2/2/2007"),]
 
 dataSubset$Date <- strptime(paste(dataSubset$Date,dataSubset$Time), "%d/%m/%Y %H:%M:%S")
 
-png(filename = "plot3.png")
+png(filename = "plot3.png", width=480, height=480)
 with(dataSubset, {
   plot(Date, Sub_metering_1, type="n", ylab="Energy sub metering", xlab="") 
   lines(Date, Sub_metering_1)
